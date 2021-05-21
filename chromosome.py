@@ -39,12 +39,6 @@ class Chromosome:
         return False
 
     def __repr__(self):
-        '''return '\nChromosome : {!r}'.format(self.chromosome) \
-               + '\ncal : {} '.format(self.calories) \
-               + '\nprotien : {} '.format(self.protein) \
-               + '\nP-rank : {}'.format(self.pareto_font) \
-               + '\nCD : {}'.format(self.crowding_dist) \
-               + '\nNiche_count : {}'.format(self.niche_count)'''
         return '\nChromosome : {!r}'.format(self.chromosome) \
                 + '\ncal : {} '.format(self.calories) + ' | protien : {} '.format(self.protein)
 
@@ -258,10 +252,3 @@ class Chromosome:
             p2.chromosome[r.randint(0, 5)] = r.randint(0, Chromosome.lenght_x)
 
         return p1, p2
-
-    @staticmethod
-    def new_habitat() -> list:
-        list_random = []
-        for j in range(Chromosome.gene_num):
-            list_random.append(r.randint(0, Chromosome.lenght_x))
-        return list_random
